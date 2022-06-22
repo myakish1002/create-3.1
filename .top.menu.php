@@ -8,15 +8,15 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Объявления", 
-		"/ads/", 
+		"О сервисе", 
+		"/about/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"О сервисе", 
-		"/about/", 
+		"Объявления", 
+		"/ads/", 
 		Array(), 
 		Array(), 
 		"" 
