@@ -3,43 +3,14 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Главная страница");
 ?>
 
-<div class="slide-one-item home-slider owl-carousel">
-
-<div class="site-blocks-cover" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-
-  <div class="text">
-	<h2>853 S Lucerne Blvd</h2>
-	<p class="location"><span class="property-icon icon-room"></span> Los Angeles, CA 90005</p>
-	<p class="mb-2"><strong>$2,250,500</strong></p>
-	
-	
-	<p class="mb-0"><a href="#" class="text-uppercase small letter-spacing-1 font-weight-bold">More Details</a></p>
-	
-  </div>
-</div>  
-
-<div class="site-blocks-cover" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/hero_bg_3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-
-  <div class="text">
-	<h2>625 S. Berendo St</h2>
-	<p class="location"><span class="property-icon icon-room"></span>607 Los Angeles, CA 90005</p>
-	<p class="mb-2"><strong>$2,250,500</strong></p>
-	
-	
-	<p class="mb-0"><a href="#" class="text-uppercase small letter-spacing-1 font-weight-bold">More Details</a></p>
-	
-  </div>
-  
-</div> 
-
 <?php
 global $arrFilter;
 $arrFilter = array("PROPERTY_PRIORITY_VALUE" => "Да");
 ?>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	"",
-	Array(
+	"bitrix:news.list", 
+	"my_template", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -59,7 +30,36 @@ $arrFilter = array("PROPERTY_PRIORITY_VALUE" => "Да");
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array("",""),
+		"FIELD_CODE" => array(
+			0 => "ID",
+			1 => "CODE",
+			2 => "XML_ID",
+			3 => "NAME",
+			4 => "TAGS",
+			5 => "SORT",
+			6 => "PREVIEW_TEXT",
+			7 => "PREVIEW_PICTURE",
+			8 => "DETAIL_TEXT",
+			9 => "DETAIL_PICTURE",
+			10 => "DATE_ACTIVE_FROM",
+			11 => "ACTIVE_FROM",
+			12 => "DATE_ACTIVE_TO",
+			13 => "ACTIVE_TO",
+			14 => "SHOW_COUNTER",
+			15 => "SHOW_COUNTER_START",
+			16 => "IBLOCK_TYPE_ID",
+			17 => "IBLOCK_ID",
+			18 => "IBLOCK_CODE",
+			19 => "IBLOCK_NAME",
+			20 => "IBLOCK_EXTERNAL_ID",
+			21 => "DATE_CREATE",
+			22 => "CREATED_BY",
+			23 => "CREATED_USER_NAME",
+			24 => "TIMESTAMP_X",
+			25 => "MODIFIED_BY",
+			26 => "USER_NAME",
+			27 => "",
+		),
 		"FILTER_NAME" => "arrFilter",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "5",
@@ -78,7 +78,16 @@ $arrFilter = array("PROPERTY_PRIORITY_VALUE" => "Да");
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array("",""),
+		"PROPERTY_CODE" => array(
+			0 => "BATHROOMS",
+			1 => "FLOORS",
+			2 => "GARAGE",
+			3 => "SQUARE",
+			4 => "PRIORITY",
+			5 => "LINKS",
+			6 => "COST",
+			7 => "",
+		),
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "N",
@@ -90,11 +99,11 @@ $arrFilter = array("PROPERTY_PRIORITY_VALUE" => "Да");
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
-		"STRICT_SECTION_CHECK" => "N"
-	)
+		"STRICT_SECTION_CHECK" => "N",
+		"COMPONENT_TEMPLATE" => "my_template"
+	),
+	false
 );?> 
-
-</div>
 
 <div class="py-5">
 <div class="container">
@@ -160,232 +169,59 @@ $arrFilter = array("PROPERTY_PRIORITY_VALUE" => "Да");
 	  </div>
 	</div>
   </div>
-  <div class="row mb-5">
-	<div class="col-md-6 col-lg-4 mb-4">
-	  <a href="property-details.html" class="prop-entry d-block">
-		<figure>
-		  <img src="<?=SITE_TEMPLATE_PATH?>/images/img_1.jpg" alt="Image" class="img-fluid">
-		</figure>
-		<div class="prop-text">
-		  <div class="inner">
-			<span class="price rounded">$1,930,000</span>
-			<h3 class="title">853 S Lucerne Blvd</h3>
-			<p class="location">Los Angeles, CA 90005</p>
-		  </div>
-		  <div class="prop-more-info">
-			<div class="inner d-flex">
-			  <div class="col">
-				<span>Area:</span>
-				<strong>240m<sup>2</sup></strong>
-			  </div>
-			  <div class="col">
-				<span>Beds:</span>
-				<strong>2</strong>
-			  </div>
-			  <div class="col">
-				<span>Baths:</span>
-				<strong>2</strong>
-			  </div>
-			  <div class="col">
-				<span>Garages:</span>
-				<strong>1</strong>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </a>
-	</div>
-	<div class="col-md-6 col-lg-4 mb-4">
-	  <a href="property-details.html" class="prop-entry d-block">
-		<figure>
-		  <img src="<?=SITE_TEMPLATE_PATH?>/images/img_2.jpg" alt="Image" class="img-fluid">
-		</figure>
-		<div class="prop-text">
-		  <div class="inner">
-			<span class="price rounded">$2,438,000</span>
-			<h3 class="title">853 S Lucerne Blvd</h3>
-			<p class="location">Los Angeles, CA 90005</p>
-		  </div>
-		  <div class="prop-more-info">
-			<div class="inner d-flex">
-			  <div class="col">
-				<span>Area:</span>
-				<strong>240m<sup>2</sup></strong>
-			  </div>
-			  <div class="col">
-				<span>Beds:</span>
-				<strong>2</strong>
-			  </div>
-			  <div class="col">
-				<span>Baths:</span>
-				<strong>2</strong>
-			  </div>
-			  <div class="col">
-				<span>Garages:</span>
-				<strong>1</strong>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </a>
-	</div>
-	<div class="col-md-6 col-lg-4 mb-4">
-	  <a href="property-details.html" class="prop-entry d-block">
-		<figure>
-		  <img src="<?=SITE_TEMPLATE_PATH?>/images/img_3.jpg" alt="Image" class="img-fluid">
-		</figure>
-		<div class="prop-text">
-		  <div class="inner">
-			<span class="price rounded">$5,320,000</span>
-			<h3 class="title">853 S Lucerne Blvd</h3>
-			<p class="location">Los Angeles, CA 90005</p>
-		  </div>
-		  <div class="prop-more-info">
-			<div class="inner d-flex">
-			  <div class="col">
-				<span>Area:</span>
-				<strong>240m<sup>2</sup></strong>
-			  </div>
-			  <div class="col">
-				<span>Beds:</span>
-				<strong>2</strong>
-			  </div>
-			  <div class="col">
-				<span>Baths:</span>
-				<strong>2</strong>
-			  </div>
-			  <div class="col">
-				<span>Garages:</span>
-				<strong>1</strong>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </a>
-	</div>
-
-	<div class="col-md-6 col-lg-4 mb-4">
-	  <a href="property-details.html" class="prop-entry d-block">
-		<figure>
-		  <img src="<?=SITE_TEMPLATE_PATH?>/images/img_4.jpg" alt="Image" class="img-fluid">
-		</figure>
-		<div class="prop-text">
-		  <div class="inner">
-			<span class="price rounded">$2,350,000</span>
-			<h3 class="title">853 S Lucerne Blvd</h3>
-			<p class="location">Los Angeles, CA 90005</p>
-		  </div>
-		  <div class="prop-more-info">
-			<div class="inner d-flex">
-			  <div class="col">
-				<span>Area:</span>
-				<strong>240m<sup>2</sup></strong>
-			  </div>
-			  <div class="col">
-				<span>Beds:</span>
-				<strong>2</strong>
-			  </div>
-			  <div class="col">
-				<span>Baths:</span>
-				<strong>2</strong>
-			  </div>
-			  <div class="col">
-				<span>Garages:</span>
-				<strong>1</strong>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </a>
-	</div>
-	<div class="col-md-6 col-lg-4 mb-4">
-	  <a href="property-details.html" class="prop-entry d-block">
-		<figure>
-		  <img src="<?=SITE_TEMPLATE_PATH?>/images/img_5.jpg" alt="Image" class="img-fluid">
-		</figure>
-		<div class="prop-text">
-		  <div class="inner">
-			<span class="price rounded">$1,550,000</span>
-			<h3 class="title">853 S Lucerne Blvd</h3>
-			<p class="location">Los Angeles, CA 90005</p>
-		  </div>
-		  <div class="prop-more-info">
-			<div class="inner d-flex">
-			  <div class="col">
-				<span>Area:</span>
-				<strong>240m<sup>2</sup></strong>
-			  </div>
-			  <div class="col">
-				<span>Beds:</span>
-				<strong>2</strong>
-			  </div>
-			  <div class="col">
-				<span>Baths:</span>
-				<strong>2</strong>
-			  </div>
-			  <div class="col">
-				<span>Garages:</span>
-				<strong>1</strong>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </a>
-	</div>
-	<div class="col-md-6 col-lg-4 mb-4">
-	  <a href="property-details.html" class="prop-entry d-block">
-		<figure>
-		  <img src="<?=SITE_TEMPLATE_PATH?>/images/img_6.jpg" alt="Image" class="img-fluid">
-		</figure>
-		<div class="prop-text">
-		  <div class="inner">
-			<span class="price rounded">$4,291,000</span>
-			<h3 class="title">853 S Lucerne Blvd</h3>
-			<p class="location">Los Angeles, CA 90005</p>
-		  </div>
-		  <div class="prop-more-info">
-			<div class="inner d-flex">
-			  <div class="col">
-				<span>Area:</span>
-				<strong>240m<sup>2</sup></strong>
-			  </div>
-			  <div class="col">
-				<span>Beds:</span>
-				<strong>2</strong>
-			  </div>
-			  <div class="col">
-				<span>Baths:</span>
-				<strong>2</strong>
-			  </div>
-			  <div class="col">
-				<span>Garages:</span>
-				<strong>1</strong>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </a>
-	</div>
-
-  </div>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:news.line",
-	"",
-	Array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
-		"DETAIL_URL" => "",
-		"FIELD_CODE" => array("",""),
-		"IBLOCKS" => array("5"),
-		"IBLOCK_TYPE" => "ads",
-		"NEWS_COUNT" => "9",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC"
-	)
+<?$APPLICATION->IncludeComponent("bitrix:news.line", "last9ads", Array(
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
+		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
+		"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+		"CACHE_TYPE" => "A",	// Тип кеширования
+		"DETAIL_URL" => "",	// URL, ведущий на страницу с содержимым элемента раздела
+		"FIELD_CODE" => array(	// Поля
+			0 => "ID",
+			1 => "CODE",
+			2 => "XML_ID",
+			3 => "NAME",
+			4 => "TAGS",
+			5 => "SORT",
+			6 => "PREVIEW_TEXT",
+			7 => "PREVIEW_PICTURE",
+			8 => "DETAIL_TEXT",
+			9 => "DETAIL_PICTURE",
+			10 => "DATE_ACTIVE_FROM",
+			11 => "ACTIVE_FROM",
+			12 => "DATE_ACTIVE_TO",
+			13 => "ACTIVE_TO",
+			14 => "SHOW_COUNTER",
+			15 => "SHOW_COUNTER_START",
+			16 => "IBLOCK_TYPE_ID",
+			17 => "IBLOCK_ID",
+			18 => "IBLOCK_CODE",
+			19 => "IBLOCK_NAME",
+			20 => "IBLOCK_EXTERNAL_ID",
+			21 => "DATE_CREATE",
+			22 => "CREATED_BY",
+			23 => "CREATED_USER_NAME",
+			24 => "TIMESTAMP_X",
+			25 => "MODIFIED_BY",
+			26 => "USER_NAME",
+			27 => "",
+			28 => "PROPERTY_COST",
+			29 => "PROPERTY_SQUARE",
+			30 => "PROPERTY_FLOORS",
+			31 => "PROPERTY_BATHROOMS",
+			32 => "PROPERTY_GARAGE",
+		),
+		"IBLOCKS" => array(	// Код информационного блока
+			0 => "5",
+		),
+		"IBLOCK_TYPE" => "ads",	// Тип информационного блока
+		"NEWS_COUNT" => "9",	// Количество новостей на странице
+		"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
+		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
+		"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
+		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
 );?>
 </div>
 </div>
@@ -400,71 +236,35 @@ $arrFilter = array("PROPERTY_PRIORITY_VALUE" => "Да");
 	</div>
   </div>
 
-  <div class="row">
-	<div class="col-md-6 col-lg-4 mb-4">
-	  <a href="#" class="service text-center border rounded">
-		<span class="icon flaticon-house"></span>
-		<h2 class="service-heading">Research Subburbs</h2>
-		<p><span class="read-more">Learn More</span></p>
-	  </a>
-	</div>
-	<div class="col-md-6 col-lg-4 mb-4">
-	  <a href="#" class="service text-center border rounded">
-		<span class="icon flaticon-sold"></span>
-		<h2 class="service-heading">Sold Houses</h2>
-		<p><span class="read-more">Learn More</span></p>
-	  </a>
-	</div>
-	<div class="col-md-6 col-lg-4 mb-4">
-	  <a href="#" class="service text-center border rounded">
-		<span class="icon flaticon-camera"></span>
-		<h2 class="service-heading">Security Priority</h2>
-		<p><span class="read-more">Learn More</span></p>
-	  </a>
-	</div>
-
-	<div class="col-md-6 col-lg-4 mb-4">
-	  <a href="#" class="service text-center border rounded">
-		<span class="icon flaticon-house"></span>
-		<h2 class="service-heading">Research Subburbs</h2>
-		<p><span class="read-more">Learn More</span></p>
-	  </a>
-	</div>
-	<div class="col-md-6 col-lg-4 mb-4">
-	  <a href="#" class="service text-center border rounded">
-		<span class="icon flaticon-sold"></span>
-		<h2 class="service-heading">Sold Houses</h2>
-		<p><span class="read-more">Learn More</span></p>
-	  </a>
-	</div>
-	<div class="col-md-6 col-lg-4 mb-4">
-	  <a href="#" class="service text-center border rounded">
-		<span class="icon flaticon-camera"></span>
-		<h2 class="service-heading">Security Priority</h2>
-		<p><span class="read-more">Learn More</span></p>
-	  </a>
-	</div>
-  </div>
-</div>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:news.line",
-	"",
-	Array(
+  <?$APPLICATION->IncludeComponent(
+	"bitrix:news.line", 
+	"services", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"DETAIL_URL" => "",
-		"FIELD_CODE" => array("",""),
-		"IBLOCKS" => array("6"),
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "PREVIEW_PICTURE",
+			2 => "PROPERTY_ANKOR",
+			3 => "",
+		),
+		"IBLOCKS" => array(
+			0 => "6",
+		),
 		"IBLOCK_TYPE" => "services",
 		"NEWS_COUNT" => "100",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC"
-	)
+		"SORT_ORDER2" => "ASC",
+		"COMPONENT_TEMPLATE" => "services"
+	),
+	false
 );?>
+</div>
 </div>
 
 <div class="site-section bg-light">
@@ -476,51 +276,34 @@ $arrFilter = array("PROPERTY_PRIORITY_VALUE" => "Да");
 	  </div>
 	</div>
   </div>
-  <div class="row">
-	<div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-	  <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/images/img_4.jpg" alt="Image" class="img-fluid"></a>
-	  <div class="p-4 bg-white">
-		<span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-		<h2 class="h5 text-black mb-3"><a href="#">When To Sell &amp; How Much To Sell?</a></h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-	  </div>
-	</div>
-	<div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-	  <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/images/img_2.jpg" alt="Image" class="img-fluid"></a>
-	  <div class="p-4 bg-white">
-		<span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-		<h2 class="h5 text-black mb-3"><a href="#">When To Sell &amp; How Much To Sell?</a></h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-	  </div>
-	</div>
-	<div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-	  <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/images/img_3.jpg" alt="Image" class="img-fluid"></a>
-	  <div class="p-4 bg-white">
-		<span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-		<h2 class="h5 text-black mb-3"><a href="#">When To Sell &amp; How Much To Sell?</a></h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-	  </div>
-	</div>
-
-  </div>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.line",
-	"",
-	Array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+	"bitrix:news.line", 
+	"last3news", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "M j, Y",
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"DETAIL_URL" => "",
-		"FIELD_CODE" => array("",""),
-		"IBLOCKS" => array("1"),
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "PREVIEW_TEXT",
+			2 => "PREVIEW_PICTURE",
+			3 => "DETAIL_PICTURE",
+			4 => "",
+		),
+		"IBLOCKS" => array(
+			0 => "1",
+		),
 		"IBLOCK_TYPE" => "news",
 		"NEWS_COUNT" => "3",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC"
-	)
+		"SORT_ORDER2" => "ASC",
+		"COMPONENT_TEMPLATE" => "last3news"
+	),
+	false
 );?>
 </div>
 </div>
@@ -535,175 +318,59 @@ $arrFilter = array("PROPERTY_PRIORITY_VALUE" => "Да");
 	</div>
   </div>
 </div>
-<div class="row block-13">
 
-  <div class="nonloop-block-13 owl-carousel">
-
-	<div class="slide-item">
-	  <div class="team-member text-center">
-		<img src="<?=SITE_TEMPLATE_PATH?>/images/person_1.jpg" alt="Image" class="img-fluid mb-4 w-50 rounded-circle mx-auto">
-		<div class="text p-3">
-		  <h2 class="mb-2 font-weight-light text-black h4">Megan Smith</h2>
-		  <span class="d-block mb-3 text-white-opacity-05">Real Estate Agent</span>
-		  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorem totam non quis facere blanditiis praesentium est. </p>
-		  <p>
-			<a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
-		  </p>
-		</div>
-	  </div>
-	</div>
-
-	<div class="slide-item">
-	  <div class="team-member text-center">
-		<img src="<?=SITE_TEMPLATE_PATH?>/images/person_2.jpg" alt="Image" class="img-fluid mb-4 w-50 rounded-circle mx-auto">
-		<div class="text p-3">
-		  <h2 class="mb-2 font-weight-light text-black h4">Brooke Cagle</h2>
-		  <span class="d-block mb-3 text-white-opacity-05">Real Estate Agent</span>
-		  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorem totam non quis facere blanditiis praesentium est. </p>
-		  <p>
-			<a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
-		  </p>
-		</div>
-	  </div>
-	</div>
-
-	<div class="slide-item">
-	  <div class="team-member text-center">
-		<img src="<?=SITE_TEMPLATE_PATH?>/images/person_3.jpg" alt="Image" class="img-fluid mb-4 w-50 rounded-circle mx-auto">
-		<div class="text p-3">
-		  <h2 class="mb-2 font-weight-light text-black h4">Philip Martin</h2>
-		  <span class="d-block mb-3 text-white-opacity-05">Real Estate Agent</span>
-		  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorem totam non quis facere blanditiis praesentium est. </p>
-		  <p>
-			<a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
-		  </p>
-		</div>
-	  </div>
-	</div>
-
-	<div class="slide-item">
-	  <div class="team-member text-center">
-		<img src="<?=SITE_TEMPLATE_PATH?>/images/person_1.jpg" alt="Image" class="img-fluid mb-4 w-50 rounded-circle mx-auto">
-		<div class="text p-3">
-		  <h2 class="mb-2 font-weight-light text-black h4">Megan Smith</h2>
-		  <span class="d-block mb-3 text-white-opacity-05">Real Estate Agent</span>
-		  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorem totam non quis facere blanditiis praesentium est. </p>
-		  <p>
-			<a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
-		  </p>
-		</div>
-	  </div>
-	</div>
-
-	<div class="slide-item">
-	  <div class="team-member text-center">
-		<img src="<?=SITE_TEMPLATE_PATH?>/images/person_2.jpg" alt="Image" class="img-fluid mb-4 w-50 rounded-circle mx-auto">
-		<div class="text p-3">
-		  <h2 class="mb-2 font-weight-light text-black h4">Brooke Cagle</h2>
-		  <span class="d-block mb-3 text-white-opacity-05">Real Estate Agent</span>
-		  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorem totam non quis facere blanditiis praesentium est. </p>
-		  <p>
-			<a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
-		  </p>
-		</div>
-	  </div>
-	</div>
-
-	<div class="slide-item">
-	  <div class="team-member text-center">
-		<img src="<?=SITE_TEMPLATE_PATH?>/images/person_3.jpg" alt="Image" class="img-fluid mb-4 w-50 rounded-circle mx-auto">
-		<div class="text p-3">
-		  <h2 class="mb-2 font-weight-light text-black h4">Philip Martin</h2>
-		  <span class="d-block mb-3 text-white-opacity-05">Real Estate Agent</span>
-		  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorem totam non quis facere blanditiis praesentium est. </p>
-		  <p>
-			<a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
-		  </p>
-		</div>
-	  </div>
-	</div>
-
-	<div class="slide-item">
-	  <div class="team-member text-center">
-		<img src="<?=SITE_TEMPLATE_PATH?>/images/person_1.jpg" alt="Image" class="img-fluid mb-4 w-50 rounded-circle mx-auto">
-		<div class="text p-3">
-		  <h2 class="mb-2 font-weight-light text-black h4">Megan Smith</h2>
-		  <span class="d-block mb-3 text-white-opacity-05">Real Estate Agent</span>
-		  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorem totam non quis facere blanditiis praesentium est. </p>
-		  <p>
-			<a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
-		  </p>
-		</div>
-	  </div>
-	</div>
-
-	<div class="slide-item">
-	  <div class="team-member text-center">
-		<img src="<?=SITE_TEMPLATE_PATH?>/images/person_2.jpg" alt="Image" class="img-fluid mb-4 w-50 rounded-circle mx-auto">
-		<div class="text p-3">
-		  <h2 class="mb-2 font-weight-light text-black h4">Brooke Cagle</h2>
-		  <span class="d-block mb-3 text-white-opacity-05">Real Estate Agent</span>
-		  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorem totam non quis facere blanditiis praesentium est. </p>
-		  <p>
-			<a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
-		  </p>
-		</div>
-	  </div>
-	</div>
-
-	<div class="slide-item">
-	  <div class="team-member text-center">
-		<img src="<?=SITE_TEMPLATE_PATH?>/images/person_3.jpg" alt="Image" class="img-fluid mb-4 w-50 rounded-circle mx-auto">
-		<div class="text p-3">
-		  <h2 class="mb-2 font-weight-light text-black h4">Philip Martin</h2>
-		  <span class="d-block mb-3 text-white-opacity-05">Real Estate Agent</span>
-		  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorem totam non quis facere blanditiis praesentium est. </p>
-		  <p>
-			<a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
-			<a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
-		  </p>
-		</div>
-	  </div>
-	</div>
-
-  </div>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:news.line",
-	"",
-	Array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
-		"DETAIL_URL" => "",
-		"FIELD_CODE" => array("",""),
-		"IBLOCKS" => array("7"),
-		"IBLOCK_TYPE" => "agents",
-		"NEWS_COUNT" => "100",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC"
-	)
+<?$APPLICATION->IncludeComponent("bitrix:news.line", "agents", Array(
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
+		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
+		"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+		"CACHE_TYPE" => "A",	// Тип кеширования
+		"DETAIL_URL" => "",	// URL, ведущий на страницу с содержимым элемента раздела
+		"FIELD_CODE" => array(	// Поля
+			0 => "ID",
+			1 => "CODE",
+			2 => "XML_ID",
+			3 => "NAME",
+			4 => "TAGS",
+			5 => "SORT",
+			6 => "PREVIEW_TEXT",
+			7 => "PREVIEW_PICTURE",
+			8 => "DETAIL_TEXT",
+			9 => "DETAIL_PICTURE",
+			10 => "DATE_ACTIVE_FROM",
+			11 => "ACTIVE_FROM",
+			12 => "DATE_ACTIVE_TO",
+			13 => "ACTIVE_TO",
+			14 => "SHOW_COUNTER",
+			15 => "SHOW_COUNTER_START",
+			16 => "IBLOCK_TYPE_ID",
+			17 => "IBLOCK_ID",
+			18 => "IBLOCK_CODE",
+			19 => "IBLOCK_NAME",
+			20 => "IBLOCK_EXTERNAL_ID",
+			21 => "DATE_CREATE",
+			22 => "CREATED_BY",
+			23 => "CREATED_USER_NAME",
+			24 => "TIMESTAMP_X",
+			25 => "MODIFIED_BY",
+			26 => "",
+			27 => "PROPERTY_POSITION",
+			28 => "PROPERTY_FB",
+			29 => "PROPERTY_TWITTER",
+			30 => "PROPERTY_LINKEDIN",
+		),
+		"IBLOCKS" => array(	// Код информационного блока
+			0 => "7",
+		),
+		"IBLOCK_TYPE" => "agents",	// Тип информационного блока
+		"NEWS_COUNT" => "100",	// Количество новостей на странице
+		"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
+		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
+		"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
+		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
 );?>
-  </div>
 </div>
 </div>
 
