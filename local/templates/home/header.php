@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="<?=LANGUAGE_ID?>">
   <head>
-    
+
     <?php
       use Bitrix\Main\Page\Asset;
 
@@ -63,14 +63,45 @@
         <div class="row align-items-center">
           <div class="col-6 col-md-6">
             <p class="mb-0">
-              <a href="#" class="mr-3"><span class="text-black fl-bigmug-line-phone351"></span> <span class="d-none d-md-inline-block ml-2">+2 102 3923 3922</span></a>
-              <a href="#"><span class="text-black fl-bigmug-line-email64"></span> <span class="d-none d-md-inline-block ml-2">info@domain.com</span></a>
+              <?$APPLICATION->IncludeComponent(
+					"bitrix:main.include", 
+					".default", 
+					array(
+						"AREA_FILE_SHOW" => "file",
+						"AREA_FILE_SUFFIX" => "inc",
+						"EDIT_TEMPLATE" => "",
+						"COMPONENT_TEMPLATE" => ".default",
+						"PATH" => SITE_DIR."/includes/header-phone.php"
+					),
+					false
+			  );?>
+			  <?$APPLICATION->IncludeComponent(
+					"bitrix:main.include", 
+					".default", 
+					array(
+						"AREA_FILE_SHOW" => "file",
+						"AREA_FILE_SUFFIX" => "inc",
+						"EDIT_TEMPLATE" => "",
+						"COMPONENT_TEMPLATE" => ".default",
+						"PATH" => SITE_DIR."/includes/header-mail.php"
+					),
+					false
+			  );?>
             </p>  
           </div>
           <div class="col-6 col-md-6 text-right">
-            <a href="#" class="mr-3"><span class="text-black icon-facebook"></span></a>
-            <a href="#" class="mr-3"><span class="text-black icon-twitter"></span></a>
-            <a href="#" class="mr-0"><span class="text-black icon-linkedin"></span></a>
+			  <?$APPLICATION->IncludeComponent(
+					"bitrix:main.include", 
+					".default", 
+					array(
+						"AREA_FILE_SHOW" => "file",
+						"AREA_FILE_SUFFIX" => "inc",
+						"EDIT_TEMPLATE" => "",
+						"COMPONENT_TEMPLATE" => ".default",
+						"PATH" => SITE_DIR."/includes/header-social.php"
+					),
+					false
+			  );?>
           </div>
         </div>
       </div>
@@ -80,7 +111,20 @@
         <div class="container py-1">
           <div class="row align-items-center">
             <div class="col-8 col-md-8 col-lg-4">
-              <h1 class=""><a href="<?=SITE_DIR?>" class="h5 text-uppercase text-black"><strong>HomeSpace<span class="text-danger">.</span></strong></a></h1>
+              <h1 class=""><a href="<?=SITE_DIR?>" class="h5 text-uppercase text-black"><strong>
+			  <?$APPLICATION->IncludeComponent(
+					"bitrix:main.include", 
+					".default", 
+					array(
+						"AREA_FILE_SHOW" => "file",
+						"AREA_FILE_SUFFIX" => "inc",
+						"EDIT_TEMPLATE" => "",
+						"COMPONENT_TEMPLATE" => ".default",
+						"PATH" => SITE_DIR."/includes/header-logo.php"
+					),
+					false
+			  );?>
+			  <span class="text-danger">.</span></strong></a></h1>
             </div>
             <div class="col-4 col-md-4 col-lg-8">
               <nav class="site-navigation text-right text-md-right" role="navigation">
@@ -111,6 +155,25 @@
                   <li><a href="about.html">About</a></li>
                   <li><a href="contact.html">Contact</a></li>
                 </ul>
+				<?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	".default", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "3",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "36000000000",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "top",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+);?>
               </nav>
             </div>
            
