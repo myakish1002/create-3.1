@@ -1,3 +1,4 @@
 bitrix/
 upload/
 !local/templates/home/components/bitrix/
+!local/templates/home/components/bitrix/news/ads/bitrix/
