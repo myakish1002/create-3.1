@@ -16,7 +16,7 @@ $this->setFrameMode(true);
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
           <div class="col-md-10">
-            <span class="d-inline-block text-white px-3 mb-3 property-offer-type rounded">Property Details of</span>
+            <span class="d-inline-block text-white px-3 mb-3 property-offer-type rounded"><?=GetMessage("TITLE")?></span> 
             <h1 class="mb-2"><?=$arResult["NAME"]?></h1>
             <p class="mb-5"><strong class="h2 text-success font-weight-bold">$<?=$arResult["DISPLAY_PROPERTIES"]["COST"]["VALUE"]?></strong></p>
           </div>
@@ -50,17 +50,17 @@ $this->setFrameMode(true);
                 <div class="col-md-6">
                   <ul class="property-specs-wrap mb-3 mb-lg-0  float-lg-right">
                   <li>
-                    <span class="property-specs">Этажи</span>
+                    <span class="property-specs"><?=GetMessage("FLOORS")?></span>
                     <span class="property-specs-number"><?=$arResult["DISPLAY_PROPERTIES"]["FLOORS"]["VALUE"]?></span>
                     
                   </li>
                   <li>
-                    <span class="property-specs">Площадь</span>
+                    <span class="property-specs"><?=GetMessage("SQUARE")?></span>
                     <span class="property-specs-number"><?=$arResult["DISPLAY_PROPERTIES"]["SQUARE"]["VALUE"]?></span>
                     
                   </li>
                   <li>
-                    <span class="property-specs">Обновлено</span>
+                    <span class="property-specs"><?=GetMessage("UPD")?></span>
                     <span class="property-specs-number"><?=stristr($arResult["TIMESTAMP_X"], " ", true)?></span>
                     
                   </li>
@@ -69,11 +69,11 @@ $this->setFrameMode(true);
             </div>
             <div class="row mb-5">
                 <div class="col-md-6 col-lg-4 text-left border-bottom border-top py-3">
-                  <span class="d-inline-block text-black mb-0 caption-text">Количество санузлов</span>
+                  <span class="d-inline-block text-black mb-0 caption-text"><?=GetMessage("BATHROOMS")?></span>
                   <strong class="d-block"><?=$arResult["DISPLAY_PROPERTIES"]["BATHROOMS"]["VALUE"]?></strong>
                 </div>
                 <div class="col-md-6 col-lg-4 text-left border-bottom border-top py-3">
-                  <span class="d-inline-block text-black mb-0 caption-text">Наличие гаража</span>
+                  <span class="d-inline-block text-black mb-0 caption-text"><?=GetMessage("GARAGE")?></span>
                   <strong class="d-block"><?= isset($arResult["DISPLAY_PROPERTIES"]["GARAGE"]) ? $arResult["DISPLAY_PROPERTIES"]["GARAGE"]["VALUE"] : "Нет"; ?></strong>
                 </div>
                 <!--<div class="col-md-6 col-lg-4 text-left border-bottom border-top py-3">
@@ -81,11 +81,11 @@ $this->setFrameMode(true);
                   <strong class="d-block">$520</strong>
                 </div>-->
               </div>
-              <h2 class="h4 text-black">More Info</h2>
+              <h2 class="h4 text-black"><?=GetMessage("MORE")?></h2>
               <p><?=$arResult["DETAIL_TEXT"]?></p>
               <div class="row mt-5">
                 <div class="col-12">
-                  <h2 class="h4 text-black mb-3">Property Gallery</h2>
+                  <h2 class="h4 text-black mb-3"><?=GetMessage("GALLERY")?></h2>
                 </div>
 				<?if(isset($arResult["DISPLAY_PROPERTIES"]["GALLERY"])):?>
 					<?if(isset($arResult["DISPLAY_PROPERTIES"]["GALLERY"]["FILE_VALUE"]["SRC"])):?>
@@ -110,16 +110,16 @@ $this->setFrameMode(true);
 			<?if(isset($arResult["DISPLAY_PROPERTIES"]["MATERIALS"])):?>
             <div class="row mt-5">
                 <div class="col-12">
-                  <h2 class="h4 text-black mb-3">Дополнительные материалы</h2>
+                  <h2 class="h4 text-black mb-3"><?=GetMessage("TITLE_MATERIALS")?></h2>
                 </div>
 					<?if(isset($arResult["DISPLAY_PROPERTIES"]["MATERIALS"]["FILE_VALUE"]["SRC"])):?>
 						<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-							<a href="<?=$arResult["DISPLAY_PROPERTIES"]["MATERIALS"]["FILE_VALUE"]["SRC"]?>">Доп.материал</a>
+							<a href="<?=$arResult["DISPLAY_PROPERTIES"]["MATERIALS"]["FILE_VALUE"]["SRC"]?>"><?=GetMessage("NAME_MATERIALS")?></a>
 						</div>
 					<?else:?>
 						<?foreach($arResult["DISPLAY_PROPERTIES"]["MATERIALS"]["FILE_VALUE"] as $galleryFile):?>
 							<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-								<a href="<?=$galleryFile["SRC"]?>">Доп.материал</a>
+								<a href="<?=$galleryFile["SRC"]?>"><?=GetMessage("NAME_MATERIALS")?></a>
 							</div>
 						<?endforeach;?>
 					<?endif;?>
@@ -129,16 +129,16 @@ $this->setFrameMode(true);
 			<?if(isset($arResult["DISPLAY_PROPERTIES"]["LINKS"])):?>
             <div class="row mt-5">
                 <div class="col-12">
-                  <h2 class="h4 text-black mb-3">Дополнительные ссылки</h2>
+                  <h2 class="h4 text-black mb-3"><?=GetMessage("TITLE_ANKORS")?></h2>
                 </div>
 					<?if(!is_array($arResult["DISPLAY_PROPERTIES"]["LINKS"]["VALUE"])):?>
 						<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-							<a href="<?=$arResult["DISPLAY_PROPERTIES"]["LINKS"]["VALUE"]?>">Доп. ссылка</a>
+							<a href="<?=$arResult["DISPLAY_PROPERTIES"]["LINKS"]["VALUE"]?>"><?=GetMessage("NAME_ANKOR")?></a>
 						</div>
 					<?else:?>
 						<?foreach($arResult["DISPLAY_PROPERTIES"]["LINKS"]["VALUE"] as $links):?>
 							<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-								<a href="<?=$links?>">Доп. ссылка</a>
+								<a href="<?=$links?>"><?=GetMessage("NAME_ANKOR")?></a>
 							</div>
 						<?endforeach;?>
 					<?endif;?>

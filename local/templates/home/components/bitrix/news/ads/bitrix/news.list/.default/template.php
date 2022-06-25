@@ -36,20 +36,20 @@ $this->setFrameMode(true);
                 <div class="prop-more-info">
                   <div class="inner d-flex">
                     <div class="col">
-                      <span>Площадь:</span>
-                      <strong><?=$arItem["DISPLAY_PROPERTIES"]["SQUARE"]["DISPLAY_VALUE"]?>m<sup>2</sup></strong>
+                      <span><?=GetMessage("SQUARE")?></span>
+                      <strong><?=$arItem["DISPLAY_PROPERTIES"]["SQUARE"]["DISPLAY_VALUE"]?><?=GetMessage("EDIZ")?></strong>
                     </div>
                     <div class="col">
-                      <span>Этажи:</span>
+                      <span><?=GetMessage("FLOORS")?></span>
                       <strong><?=$arItem["DISPLAY_PROPERTIES"]["FLOORS"]["DISPLAY_VALUE"]?></strong>
                     </div>
                     <div class="col">
-                      <span>Санузлы:</span>
+                      <span><?=GetMessage("BATHROOMS")?></span>
                       <strong><?=$arItem["DISPLAY_PROPERTIES"]["BATHROOMS"]["DISPLAY_VALUE"]?></strong>
                     </div>
                     <div class="col">
-                      <span>Гараж:</span>
-                      <strong><?if(isset($arItem["DISPLAY_PROPERTIES"]["GARAGE"])) echo $arItem["DISPLAY_PROPERTIES"]["GARAGE"]["DISPLAY_VALUE"]; else echo "Нет";?></strong>
+                      <span><?=GetMessage("GARAGE")?></span> 
+                      <strong><?if(isset($arItem["DISPLAY_PROPERTIES"]["GARAGE"])) echo $arItem["DISPLAY_PROPERTIES"]["GARAGE"]["DISPLAY_VALUE"]; else echo GetMessage("NO");?></strong>
                     </div>
                   </div>
                 </div>
