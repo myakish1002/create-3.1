@@ -8,7 +8,7 @@ $arUrlRewrite=array (
     'PATH' => '/lichnyy-kabinet-prodavtsa/moi-obyavleniya/index.php',
     'SORT' => 100,
   ),
-  19 => 
+  22 => 
   array (
     'CONDITION' => '#^/about/novosti/#',
     'RULE' => '',
