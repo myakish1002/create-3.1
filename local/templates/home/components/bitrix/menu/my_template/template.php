@@ -35,7 +35,7 @@ foreach($arResult as $arItem):?>
 		<?else:?>
 
 				<li<?if ($arItem["SELECTED"]):?> class="active"<?endif?>>
-					<a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
+					<span><?=$arItem["TEXT"]?></span>
 				</li>
 
 		<?endif?>

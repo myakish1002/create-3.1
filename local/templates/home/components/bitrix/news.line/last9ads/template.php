@@ -22,7 +22,7 @@ $this->setFrameMode(true);
 			<a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="prop-entry d-block">
 				<figure>
 					<img src="<?=$arItem["DETAIL_PICTURE"]["SRC"]?>" alt="Image" class="img-fluid">
-				</figure>
+				</figure> 
 				<div class="prop-text">
 					<div class="inner">
 						<span class="price rounded">$<?=$arItem["PROPERTY_COST_VALUE"]?></span>
@@ -32,24 +32,24 @@ $this->setFrameMode(true);
 					<div class="prop-more-info">
 						<div class="inner d-flex">
 						<div class="col">
-							<span>Площадь:</span>
+							<span><?=GetMessage("SQUARE")?></span>
 							<strong><?=$arItem["PROPERTY_SQUARE_VALUE"]?>m<sup>2</sup></strong>
 						</div>
 						<div class="col">
-							<span>Этажи:</span>
+							<span><?=GetMessage("FLOORS")?></span>
 							<strong><?=$arItem["PROPERTY_FLOORS_VALUE"]?></strong>
 						</div>
 						<div class="col">
-							<span>Санузлы:</span>
+							<span><?=GetMessage("BATHROOMS")?></span>
 							<strong><?=$arItem["PROPERTY_BATHROOMS_VALUE"]?></strong>
 						</div>
 						<div class="col">
-							<span>Гараж:</span>
+							<span><?=GetMessage("GARAGE")?></span>
 							<strong>
 								<?if($arItem["PROPERTY_GARAGE_VALUE"]):?>
 								<?=$arItem["PROPERTY_GARAGE_VALUE"]?>
 								<?else:?>
-								Нет
+									<?=GetMessage("NO")?>
 								<?endif;?>
 							</strong>
 						</div>

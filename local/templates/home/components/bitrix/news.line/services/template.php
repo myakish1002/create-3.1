@@ -22,7 +22,7 @@ $this->setFrameMode(true);
 			<a href="<?=$arItem["PROPERTY_ANKOR_VALUE"]?>" class="service text-center border rounded">
 				<span class="icon"><img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt=""></span>
 				<h2 class="service-heading"><?=$arItem["NAME"]?></h2>
-				<p><span class="read-more">Learn More</span></p>
+				<p><span class="read-more"><?=GetMessage("MORE")?></span></p> 
 			</a>
 		</div>
 	<?endforeach;?>
