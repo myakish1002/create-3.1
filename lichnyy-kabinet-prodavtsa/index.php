@@ -12,4 +12,5 @@ $APPLICATION->SetTitle("Личный кабинет продавца");
 		"USER_PROPERTY_NAME" => ""
 	)
 );?><br>
- <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+ <br>
+ <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

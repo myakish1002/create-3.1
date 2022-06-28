@@ -1,18 +1,13 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("test");
-?><?$APPLICATION->IncludeComponent("bitrix:main.feedback", "feedback", Array(
-	"EMAIL_TO" => "andreas.gulai@yandex.ru",	// E-mail, на который будет отправлено письмо
-		"EVENT_MESSAGE_ID" => array(	// Почтовые шаблоны для отправки письма
-			0 => "7",
-		),
-		"OK_TEXT" => "Спасибо, ваше сообщение принято.",	// Сообщение, выводимое пользователю после отправки
-		"REQUIRED_FIELDS" => array(	// Обязательные поля для заполнения
-			0 => "NAME",
-			1 => "EMAIL",
-			2 => "MESSAGE",
-		),
-		"USE_CAPTCHA" => "Y",	// Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей
-	),
-	false
+?><?$APPLICATION->IncludeComponent(
+	"bitrix:system.auth.form",
+	"",
+	Array(
+		"FORGOT_PASSWORD_URL" => "",
+		"PROFILE_URL" => "",
+		"REGISTER_URL" => "",
+		"SHOW_ERRORS" => "N"
+	)
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
